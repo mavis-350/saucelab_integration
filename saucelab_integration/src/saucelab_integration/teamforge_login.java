@@ -16,9 +16,8 @@ public class teamforge_login {
 	    DesiredCapabilities caps = DesiredCapabilities.chrome();
 	    caps.setCapability("platform", "Windows 10");
 	    caps.setCapability("version", "latest");
-	    caps.setCapability("name", "Teamforge Login");
-	    caps.setCapability("build", "1.0");
-
+	    caps.setCapability("build", System.getenv("Teamforge") + "__" + System.getenv("1.0"));
+		  
 	    WebDriver driver = new RemoteWebDriver(new java.net.URL(URL), caps);
 
 	    driver.get("https://stage.forge.collab.net");
@@ -40,6 +39,7 @@ public class teamforge_login {
 	    {
 	    	System.out.println("Test Failure");
 	    }
+	    
 	}
 
 }
